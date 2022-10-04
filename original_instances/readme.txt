@@ -1,9 +1,3 @@
-Instances used in:
-Giovanni Capobianco, Ciriaco D’Ambrosio, Luigi Pavone, Andrea Raiconi, Gaetano Vitale, Fabio Sebastiano 
-A hybrid metaheuristic for the Knapsack Problem with Forfeits
-Soft Computing, https://doi.org/10.1007/s00500-021-06331-x
-==================================================
-
 Instances are organized in folders depending on their type (O - LK - MF) and subfolders depending on the number of items (500 - 700 - 800 - 1000).
 
 For each instance file, the structure is the following:
