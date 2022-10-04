@@ -6,7 +6,7 @@ class Instance:
 
         self.num_items = data[0]
         self.num_forfeits_pairs = data[1]
-        self.budget = data[2]
+        self.budget = int(data[2][5:-2])
         self.items = data[3]
         self.forfeits_pairs = data[4]
         self.weights = data[5]

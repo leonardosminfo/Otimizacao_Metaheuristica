@@ -6,17 +6,43 @@ filename = sys.argv[1]
 problem_instance = Instance(filename)
 problem_instance.convert_attributes_to_list()
 
-print(problem_instance.budget)
-
-
 def greedyforfeits(X, W, P, b, F, D):
     S = []
     bres = b
-    # while X / S != 0:
-    #     Xiter = []
+    ratio = []
+
+    while X != S:
+        Xiter = []
+        for i in X:
+            if W[i] <= bres and i not in S:
+                Xiter.append(i)
+
+        if len(Xiter) == 0:
+            return S
+
+        for i in Xiter:
+            p_i_line = P[i]
+            for pair in F:
+                if pair[1] in S:
+                    p_i_line = p_i_line - D[F.index(pair)]
+        
+            ratio_i = p_i_line / W[i]
+            
+            ratio.append(ratio_i)
+            i_star = max(ratio)
+            index_i_star = ratio.index(i_star)
+
+      
+        if ratio[index_i_star] < 0:
+            return S
+                
+        S.append(index_i_star)
+        bres = bres - W[index_i_star]
+
+    return S
 
 
-greedyforfeits(
+solution = greedyforfeits(
     problem_instance.items,
     problem_instance.weights,
     problem_instance.profits,
@@ -25,4 +51,4 @@ greedyforfeits(
     problem_instance.forfeits_costs,
 )
 
-# terminal execution: python3 constructivealgorithm.py kpf_500_1.txt
+print(solution)
