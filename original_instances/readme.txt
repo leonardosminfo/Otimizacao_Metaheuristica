@@ -1,4 +1,4 @@
-Instances are organized in folders depending on their type (O - LK - MF) and subfolders depending on the number of items (500 - 700 - 800 - 1000).
+Instances are organized in folders and subfolders depending on the number of items (500 - 700 - 800 - 1000).
 
 For each instance file, the structure is the following:
 
