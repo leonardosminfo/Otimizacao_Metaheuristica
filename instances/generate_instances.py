@@ -8,42 +8,41 @@ for n in num_item:
     l = n * 6
     b = n * 3
 
-
     # Items
     X = []
 
     for i in range(n):
         X.append(i)
 
-    # Forfeits Set Pairs
-    # Different values pair
-    F = []
-    for i in range(l):
-        tpl = (random.randint(0, n), random.randint(0, n))
+    for j in range(1, 6):
 
-        while tpl in F:
-            rd1 = random.randint(0, n)
-            rd2 = random.randint(0, n)
-            if rd1 != rd2:
-                tpl = (random.randint(0, n), random.randint(0, n))
+        # Forfeits Set Pairs
+        # Different values pair
+        F = []
+        for i in range(l):
+            tpl = (random.randint(0, n), random.randint(0, n))
 
-        F.append(tpl)
+            while tpl in F:
+                rd1 = random.randint(0, n)
+                rd2 = random.randint(0, n)
+                if rd1 != rd2:
+                    tpl = (random.randint(0, n), random.randint(0, n))
 
-    # Weight and Profit Item Set
-    W = []
-    P = []
-    for i in range(n):
-        W.append(random.randint(3, 20))
-        P.append(random.randint(5, 25))
+            F.append(tpl)
 
-    # Forfeit costs set
-    D = []
-    for i in range(l):
-        D.append(random.randint(2, 15))
+        # Weight and Profit Item Set
+        W = []
+        P = []
+        for i in range(n):
+            W.append(random.randint(3, 20))
+            P.append(random.randint(5, 25))
 
+        # Forfeit costs set
+        D = []
+        for i in range(l):
+            D.append(random.randint(2, 15))
 
-    for i in range(1,6):
-        with open(f"kpf_{n}_{i}.txt", "w") as f:
+        with open(f"kpf_{n}_{j}.txt", "w") as f:
             f.write(f"n = {n}\n")
             f.write(f"l = {l}\n")
             f.write(f"b = {b}\n")

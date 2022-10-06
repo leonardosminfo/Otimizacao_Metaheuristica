@@ -10,23 +10,21 @@ problem_instance = Instance(filename)
 
 
 def greedyforfeits(X, W, P, b, F, D):
-    S = np.a
+    S = np.empty_like(X)
     bres = b
-    ratio = []
+    ratio = np.empty_like(X)
 
-    while X != S:
-        print(S)
+    while np.array_equal(S, X) == False:
         Xiter = []
         for i in X:
             if W[i] <= bres and i not in S:
-                Xiter.append(i)
+                Xiter = np.append(Xiter, i)
+                # Xiter.append(i)
 
-        if not Xiter:
+        if Xiter.size == 0:
             return S
 
-        print(f"Xiter: {Xiter}")
-
-        for i in Xiter:
+        for i in np.nditer(Xiter):
             p_i = P[i]
             for pair in F:
                 if pair[1] in S:
@@ -34,14 +32,16 @@ def greedyforfeits(X, W, P, b, F, D):
 
             ratio_i = p_i / W[i]
 
-            ratio.append(ratio_i)
+            ratio = np.append(ratio, ratio_i)
+            # ratio.append(ratio_i)
 
         i_star = argmax(ratio)
 
         if ratio[i_star] < 0:
             return S
 
-        S.append(Xiter[i_star])
+        S = np.append(S, Xiter[i_start])
+        # S.append(Xiter[i_star])
 
         bres = bres - W[i_star]
 

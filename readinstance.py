@@ -1,22 +1,60 @@
+import numpy as np
+
+
 class Instance:
     def __init__(self, filename):
 
-        with open(f"instances/{filename}") as f:
-            data = [line for line in f.readlines()]
+        path = f"instances/{filename}"
 
-        self.num_items = data[0]
-        self.num_forfeits_pairs = data[1]
-        self.budget = int(data[2][5:-2])
-        self.items = data[3]
-        self.forfeits_pairs = data[4]
-        self.weights = data[5]
-        self.profits = data[6]
-        self.forfeits_costs = data[7]
+        f = open(path, "r")
 
-    def convert_attributes_to_list(self) -> list:
+        self.num_items, self.num_forfeits_pairs, self.budget = map(
+            int, f.readline().split(" ")
+        )
 
-        self.items = list(eval(self.items[5:-2]))
-        self.forfeits_pairs = list(eval(self.forfeits_pairs[5:-2]))
-        self.weights = list(eval(self.weights[5:-2]))
-        self.profits = list(eval(self.profits[5:-2]))
-        self.forfeits_costs = list(eval(self.forfeits_costs[5:-2]))
+        f.close()
+
+        # items definition
+        items = []
+        for i in range(self.num_items):
+            items.append(i)
+
+        self.items = np.array(items)
+
+        line_counter = 1
+
+        self.profits = np.loadtxt(
+            path, delimiter=" ", skiprows=line_counter, max_rows=1
+        )
+        line_counter += 1
+
+        self.weights = np.loadtxt(
+            path, delimiter=" ", skiprows=line_counter, max_rows=1
+        )
+        line_counter += 1
+
+        max = 2 * self.num_forfeits_pairs
+
+        self.forfeit_cost_and_forfeits_pairs = np.loadtxt(
+            path, delimiter=" ", skiprows=line_counter, max_rows=max, usecols=(0, 1)
+        ).tolist()
+
+        self.forfeits_costs = [
+            v for i, v in enumerate(self.forfeit_cost_and_forfeits_pairs) if i % 2 == 0
+        ]
+
+        self.forfeits_pairs = [
+            v for i, v in enumerate(self.forfeit_cost_and_forfeits_pairs) if i % 2 != 0
+        ]
+
+        # remove the first element of the sublist
+        for i in range(len(self.forfeits_costs)):
+            self.forfeits_costs[i].pop(0)
+
+        # transform list of lists into a single list - flatten
+        self.forfeits_costs = [
+            item for sublist in self.forfeits_costs for item in sublist
+        ]
+
+        self.forfeits_costs = np.array(self.forfeits_costs)
+        self.forfeits_pairs = np.array(self.forfeits_pairs)
