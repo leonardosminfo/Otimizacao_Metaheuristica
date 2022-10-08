@@ -1,3 +1,4 @@
+import numpy as np
 from numpy import argmax
 
 from readinstance import Instance
@@ -7,45 +8,55 @@ from readinstance import Instance
 filename = "500/kpf_1.txt"
 problem_instance = Instance(filename)
 
+print(problem_instance.forfeits_pairs)
+
 
 def greedyalgorithm(X, W, P, b, F, D):
-    S = []
+    S = np.array([])
     bres = b
 
     # critério guloso ou custo benefício
-    h = []
+    H = np.array([])
 
     # lista restrita de candidatos
-    lcr = []
+    lcr = np.array([])
 
-    while X != S:
+    while np.array_equal(S, X) == False:
+        Xiter = np.array([])
 
-        Xiter = []
+        print(S)  # print solution
+        # print(Xiter)
+
         for i in X:
             if W[i] <= bres and i not in S:
-                Xiter.append(i)
+                Xiter = np.append(Xiter, i)
 
-        if not Xiter:
+        if len(Xiter) == 0:
             return S
+
+        # for i in Xiter:
+        #     i = int(i)
+        #     p_i = P[i]
+        #     for pair in F:
+        #         if pair[1] in S:
+        #             p_i = p_i - D[int(pair[1])]
 
         for i in Xiter:
+            i = int(i)
             p_i = P[i]
-            for pair in F:
-                if pair[1] in S:
-                    p_i = p_i - D[F.index(pair)]
+            # print(p_i)
+            h_i = p_i / W[i]
+            H = np.append(H, h_i)
 
-            ratio_i = p_i / W[i]
+        i_max = argmax(H)
+        # i_min = argmin(H)
 
-            h.append(ratio_i)
-
-        i_star = argmax(ratio)
-
-        if ratio[i_star] < 0:
+        if H[i_max] < 0:
             return S
 
-        S.append(Xiter[i_star])
+        S = np.append(S, Xiter[i_max])
 
-        bres = bres - W[i_star]
+        bres = bres - W[i]
 
     return S
 
