@@ -12,6 +12,7 @@ Cerulli, R., D’Ambrosio, C., Raiconi, A., Vitale, G. (2020). The Knapsack Prob
 - [x] Viabilização de Instâncias
 - [x] Algoritmos Construtivo
 - [x] Ajuste Algoritmo Construtivo
+- [ ] Ajuste Algoritmo Construtivo com Penalidades
 - [ ] Algoritmo com Busca Local
 - [ ] Execução: 10x para cada Instância.
 - [ ] Reportar Tabela: Melhor Solução
