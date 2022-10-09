@@ -29,7 +29,7 @@ while s_mudou==True:
             h_i2 = p_i2 / W[i]                     #
             H2 = np.append(H, h_i2)                #
         for i in S:           #   Esta parte calcula Bres que
-            Bres=B-P[i]         #   é a capacidade restante.
+            Bres=B-W[i]         #   é a capacidade restante.
         for i in X:
             while H2[i]>0 and P[i]<=Bres:   #
                 if H2[i]==max(H2):          # Identifica o item fora da solução (X) com maior densidade
