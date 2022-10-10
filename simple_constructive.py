@@ -1,40 +1,52 @@
+import sys
+import time
+
 import numpy as np
-from numpy import argmax
 
 from readinstance import Instance
 
-# filename = sys.argv[1]
+filename = sys.argv[1]
+alpha = float(sys.argv[2])
 
-filename = "500/kpf_1.txt"
+filename = f"500/{filename}"
 problem_instance = Instance(filename)
 
-print(problem_instance.forfeits_pairs)
 
-
-def greedyalgorithm(X, W, P, b, F, D):
+def greedyalgorithm(X, W, P, b, F, D, alpha):
     S = np.array([])
     bres = b
 
-    # critério guloso ou custo benefício
-    H = np.array([])
-
-    # lista restrita de candidatos
-    lcr = np.array([])
+    # print(X)
+    # print(b)
+    # print(f"Pesos item: {W}")
+    # print(f"Custos item: {P}")
 
     while np.array_equal(S, X) == False:
+        # elementos a serem adicionados na lista
         Xiter = np.array([])
 
-        print(S)  # print solution
-        # print(Xiter)
+        # critério guloso ou custo benefício
+        H = np.array([])
+        H_aux = []
+
+        # lista restrita de candidatos
+        lcr = np.array([])
+
+        # print("################")
+        # print()
+
+        # print(f"Solution: {S}")  # print solution
 
         for i in X:
             if W[i] <= bres and i not in S:
                 Xiter = np.append(Xiter, i)
 
+        # print(f"A ser adicionado {Xiter}")
+
         if len(Xiter) == 0:
             return S
 
-        # for i in Xiter:
+        # for i in Xiter: # forfeit costs
         #     i = int(i)
         #     p_i = P[i]
         #     for pair in F:
@@ -44,30 +56,77 @@ def greedyalgorithm(X, W, P, b, F, D):
         for i in Xiter:
             i = int(i)
             p_i = P[i]
-            # print(p_i)
             h_i = p_i / W[i]
+
+            tpl_cost = (i, h_i)
+
             H = np.append(H, h_i)
+            H_aux.append(tpl_cost)
 
-        i_max = argmax(H)
-        # i_min = argmin(H)
+        # print(f"Custos benefícios: {H}")
 
-        if H[i_max] < 0:
-            return S
+        i_max = np.argmax(H)
+        i_min = np.argmin(H)
 
-        S = np.append(S, Xiter[i_max])
+        # o cálculo dos limites da lcr
+        ub = H[i_max] + alpha * (H[i_min] - H[i_max])
+        lb = H[i_min]
 
-        bres = bres - W[i]
+        if round(ub, 5) == round(lb, 5):  # guloso
+
+            i_max = np.argmax(H)
+
+            S = np.append(S, Xiter[i_max])
+
+            bres = bres - W[i_max]
+        else:  # semi-guloso ou aleatório
+            for h_i in H:
+                if h_i >= lb and h_i <= ub:
+                    for item, j in H_aux:
+                        if item not in lcr:
+                            lcr = np.append(lcr, item)
+
+            # print(f"lista de candidatos: {lcr}")
+
+            candidate = int(np.random.choice(lcr))
+
+            S = np.append(S, candidate)
+
+            bres = bres - W[candidate]
+
+    # realizar fora do while loop os descontos dos forfeit pairs, após geradas as soluções
 
     return S
 
 
-solution = greedyalgorithm(
-    problem_instance.items,
-    problem_instance.weights,
-    problem_instance.profits,
-    problem_instance.budget,
-    problem_instance.forfeits_pairs,
-    problem_instance.forfeits_costs,
-)
+for i in range(1, 11):
+    start_time = time.time()
 
-print(solution)
+    solution = greedyalgorithm(
+        problem_instance.items,
+        problem_instance.weights,
+        problem_instance.profits,
+        problem_instance.budget,
+        problem_instance.forfeits_pairs,
+        problem_instance.forfeits_costs,
+        alpha,
+    )
+
+    end_time = time.time()
+
+    wall_time = end_time - start_time
+
+    cost = 0
+    for sol in solution:
+        sol = int(sol)
+        cost = cost + problem_instance.profits[sol]
+
+    f = open(f"resultados.txt", "a")
+
+    f.write(f"execucao_{i} para {filename}:\n")
+    f.write(f"-> alpha: {alpha}\n")
+    f.write(f"-> custo solucao : {cost}\n")
+    f.write(f"-> tempo: {wall_time}\n")
+    f.write(f"\n")
+
+    f.close()

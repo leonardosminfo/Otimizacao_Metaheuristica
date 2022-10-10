@@ -12,10 +12,10 @@ problem_instance = Instance(filename)
 def greedyforfeits(X, W, P, b, F, D):
     S = np.array([])
     bres = b
-    ratio = np.array([])
 
     while np.array_equal(S, X) == False:
         Xiter = []
+        ratio = np.array([])
         print(S)  # print solution
         for i in X:
             if W[i] <= bres and i not in S:
