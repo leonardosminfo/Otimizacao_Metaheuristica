@@ -13,7 +13,7 @@ while s_mudou==True:
         h_i = p_i / W[i]                     #
         H = np.append(H, h_i)                #
     lista_itens=                  #Esta lista é S organizado em ordem crescente de densidades. Eu não sei como fazer isso.
-    num_itens_lista=len(lista_itens)
+    num_itens_lista=len(lista_itens)  #Calcula número de itens da solução
     i=1            #Esse i serve apenas para o while loop seguinte
     while i<=num_itens_lista and s_mudou==False:
         pior_item=lista_itens[i]       #Iem com pior valor de densidade
@@ -31,7 +31,7 @@ while s_mudou==True:
         for i in S:           #   Esta parte calcula Bres que
             Bres=B-W[i]         #   é a capacidade restante.
         for i in X:
-            while H2[i]>0 and P[i]<=Bres:   #
+            while H2[i]>0 and W[i]<=Bres:   #
                 if H2[i]==max(H2):          # Identifica o item fora da solução (X) com maior densidade
                     melhor_item=X[i]        # e acrescenta este item na solução S.
                     S=S+(melhor_item)       #
