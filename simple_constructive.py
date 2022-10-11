@@ -94,8 +94,6 @@ def greedyalgorithm(X, W, P, b, F, D, alpha):
 
             bres = bres - W[candidate]
 
-    # realizar fora do while loop os descontos dos forfeit pairs, após geradas as soluções
-
     return S
 
 
@@ -121,7 +119,7 @@ for i in range(1, 11):
         sol = int(sol)
         cost = cost + problem_instance.profits[sol]
 
-    f = open(f"resultados.txt", "a")
+    f = open(f"resultados/resultados_500_3.txt", "a")
 
     f.write(f"execucao_{i} para {filename}:\n")
     f.write(f"-> alpha: {alpha}\n")

@@ -1,0 +1,150 @@
+execucao_1 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1926.0
+-> tempo: 74.02322888374329
+
+execucao_2 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 2026.0
+-> tempo: 75.43591856956482
+
+execucao_3 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1878.0
+-> tempo: 70.79168128967285
+
+execucao_4 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1951.0
+-> tempo: 73.75902009010315
+
+execucao_5 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 2066.0
+-> tempo: 72.48771095275879
+
+execucao_6 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1901.0
+-> tempo: 85.64952445030212
+
+execucao_7 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1935.0
+-> tempo: 100.27345108985901
+
+execucao_8 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1828.0
+-> tempo: 81.0472776889801
+
+execucao_9 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1868.0
+-> tempo: 86.16710805892944
+
+execucao_10 para 500/kpf_3.txt:
+-> alpha: 0.0
+-> custo solucao : 1852.0
+-> tempo: 72.81785011291504
+
+execucao_1 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.2174100875854492
+
+execucao_2 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.3329379558563232
+
+execucao_3 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.1284902095794678
+
+execucao_4 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.2099473476409912
+
+execucao_5 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.0558631420135498
+
+execucao_6 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.356905221939087
+
+execucao_7 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.127073049545288
+
+execucao_8 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.0504536628723145
+
+execucao_9 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.1221516132354736
+
+execucao_10 para 500/kpf_3.txt:
+-> alpha: 1.0
+-> custo solucao : 2639.0
+-> tempo: 1.2199482917785645
+
+execucao_1 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 2080.0
+-> tempo: 75.97784185409546
+
+execucao_2 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 2023.0
+-> tempo: 75.62808036804199
+
+execucao_3 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1958.0
+-> tempo: 78.29086899757385
+
+execucao_4 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1875.0
+-> tempo: 100.26644659042358
+
+execucao_5 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1771.0
+-> tempo: 78.40901470184326
+
+execucao_6 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1875.0
+-> tempo: 82.2778172492981
+
+execucao_7 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1902.0
+-> tempo: 86.25944399833679
+
+execucao_8 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1887.0
+-> tempo: 75.98861575126648
+
+execucao_9 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1892.0
+-> tempo: 85.54630064964294
+
+execucao_10 para 500/kpf_3.txt:
+-> alpha: 0.7
+-> custo solucao : 1865.0
+-> tempo: 68.36188912391663
+
