@@ -14,12 +14,31 @@ problem_instance = Instance(filename)
 
 def greedyalgorithm(X, W, P, b, F, D, alpha):
     S = np.array([])
-    bres = b
+    bres = b = 25
 
     print(X)
     print(b)
     print(f"Pesos item: {W}")
     print(f"Custos item: {P}")
+
+    f = {}
+    keys = []
+    values = []
+
+    from collections import defaultdict
+
+    for pair in F:
+        keys.append(pair[0])
+        values.append(pair[1])
+
+    for i in di:
+        print(i)
+
+    # for i in range(0, 3000):
+    #     i = int(i)
+    #     f[i] = values[i]
+
+    # print(f)
 
     while np.array_equal(S, X) == False:
         # elementos a serem adicionados na lista
@@ -53,11 +72,11 @@ def greedyalgorithm(X, W, P, b, F, D, alpha):
         #         if pair[1] in S:
         #             p_i = p_i - D[int(pair[1])]
 
-        f = {182: [(224, 15), (277, 8)]}
+        # f = {182: [(224, 15), (277, 8)]}
 
-        for par in f[i]:
-            if par[0] in S:
-                pi = pi - par[1]
+        # for par in f[i]:
+        #     if par[0] in S:
+        #         pi = pi - par[1]
 
         for i in Xiter:
             i = int(i)
@@ -106,9 +125,9 @@ def greedyalgorithm(X, W, P, b, F, D, alpha):
 start_time = time.time()
 
 solution = greedyalgorithm(
-    problem_instance.items,
-    problem_instance.weights,
-    problem_instance.profits,
+    problem_instance.items[:6],
+    problem_instance.weights[:6],
+    problem_instance.profits[:6],
     problem_instance.budget,
     problem_instance.forfeits_pairs,
     problem_instance.forfeits_costs,
