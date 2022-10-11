@@ -28,8 +28,9 @@ while s_mudou==True:
                     p_i2 = p_i2 - D[int(pair[1])]  #   S.
             h_i2 = p_i2 / W[i]                     #
             H2 = np.append(H, h_i2)                #
-        for i in S:           #   Esta parte calcula Bres que
-            Bres=B-W[i]         #   é a capacidade restante.
+        Bres=B                     #
+        for i in S:                #   Esta parte calcula Bres que
+            Bres=Bres-W[i]         #   é a capacidade restante.
         for i in X:
             while H2[i]>0 and W[i]<=Bres:   #
                 if H2[i]==max(H2):          # Identifica o item fora da solução (X) com maior densidade
