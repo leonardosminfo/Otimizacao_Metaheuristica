@@ -20,4 +20,4 @@ Cerulli, R., D’Ambrosio, C., Raiconi, A., Vitale, G. (2020). The Knapsack Prob
 - [x] Reportar Tabela: Média da Solução
 - [x] Reportar Tabela: Média do Tempo
 - [x] Reportar Tabela: Coeficiente/Desvio de Variação das Soluções
-- [ x Reportar Tabela: Coeficiente de Variação do Tempo
+- [x] Reportar Tabela: Coeficiente de Variação do Tempo
