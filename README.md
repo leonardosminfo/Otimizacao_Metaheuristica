@@ -12,11 +12,12 @@ Cerulli, R., D’Ambrosio, C., Raiconi, A., Vitale, G. (2020). The Knapsack Prob
 - [x] Viabilização de Instâncias
 - [x] Algoritmos Construtivo
 - [x] Ajuste Algoritmo Construtivo
-- [ ] Ajuste Algoritmo Construtivo com Penalidades
-- [ ] Algoritmo com Busca Local
-- [ ] Execução: 10x para cada Instância.
-- [ ] Reportar Tabela: Melhor Solução
-- [ ] Reportar Tabela: Média da Solução
-- [ ] Reportar Tabela: Média do Tempo
-- [ ] Reportar Tabela: Coeficiente/Desvio de Variação das Soluções
-- [ ] Reportar Tabela: Coeficiente de Variação do Tempo
+- [x] Ajuste Algoritmo Construtivo com Penalidades
+- [x] Algoritmo com Busca Local
+- [x] Framework GRASP
+- [x] Execução: 10x para cada Instância.
+- [x] Reportar Tabela: Melhor Solução
+- [x] Reportar Tabela: Média da Solução
+- [x] Reportar Tabela: Média do Tempo
+- [x] Reportar Tabela: Coeficiente/Desvio de Variação das Soluções
+- [ x Reportar Tabela: Coeficiente de Variação do Tempo
