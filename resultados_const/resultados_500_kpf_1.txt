@@ -1,0 +1,184 @@
+#### ALGORITMO CONSTRUTIVO ####
+
+----------
+execucao_1 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1234.0
+-> tempo: 0.007673978805541992
+
+----------
+execucao_2 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1134.0
+-> tempo: 0.00691986083984375
+
+----------
+execucao_3 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1145.0
+-> tempo: 0.006361246109008789
+
+----------
+execucao_4 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1074.0
+-> tempo: 0.006218910217285156
+
+----------
+execucao_5 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1177.0
+-> tempo: 0.005941629409790039
+
+----------
+execucao_6 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1147.0
+-> tempo: 0.006649971008300781
+
+----------
+execucao_7 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1084.0
+-> tempo: 0.006182432174682617
+
+----------
+execucao_8 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1057.0
+-> tempo: 0.007466316223144531
+
+----------
+execucao_9 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1066.0
+-> tempo: 0.006869077682495117
+
+----------
+execucao_10 para 500/kpf_1.txt:
+-> alpha: 0.0
+-> custo solucao : 1087.0
+-> tempo: 0.0065042972564697266
+
+----------
+execucao_1 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008270740509033203
+
+----------
+execucao_2 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008274316787719727
+
+----------
+execucao_3 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008618593215942383
+
+----------
+execucao_4 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008275032043457031
+
+----------
+execucao_5 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008275508880615234
+
+----------
+execucao_6 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008313179016113281
+
+----------
+execucao_7 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008600473403930664
+
+----------
+execucao_8 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.009544134140014648
+
+----------
+execucao_9 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008344888687133789
+
+----------
+execucao_10 para 500/kpf_1.txt:
+-> alpha: 1.0
+-> custo solucao : 1767.0
+-> tempo: 0.008656501770019531
+
+----------
+execucao_1 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1539.0
+-> tempo: 0.01717400550842285
+
+----------
+execucao_2 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1619.0
+-> tempo: 0.01564788818359375
+
+----------
+execucao_3 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1724.0
+-> tempo: 0.016619205474853516
+
+----------
+execucao_4 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1674.0
+-> tempo: 0.01629781723022461
+
+----------
+execucao_5 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1661.0
+-> tempo: 0.01612710952758789
+
+----------
+execucao_6 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1673.0
+-> tempo: 0.015522956848144531
+
+----------
+execucao_7 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1596.0
+-> tempo: 0.02186727523803711
+
+----------
+execucao_8 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1554.0
+-> tempo: 0.01670098304748535
+
+----------
+execucao_9 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1344.0
+-> tempo: 0.0183563232421875
+
+----------
+execucao_10 para 500/kpf_1.txt:
+-> alpha: 0.7
+-> custo solucao : 1543.0
+-> tempo: 0.0236661434173584
+
+#### FIM ALGORITMO CONSTRUTIVO ####
+
