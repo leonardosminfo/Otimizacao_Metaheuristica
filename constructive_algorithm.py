@@ -1,16 +1,6 @@
 import random as rd
-import sys
-import time
 
 import numpy as np
-
-from readinstance import Instance
-
-filename = sys.argv[1]
-alpha = float(sys.argv[2])
-
-filename = f"500/{filename}"
-problem_instance = Instance(filename)
 
 
 def calculate_penalty(items, forfeits_pairs, forfeits_costs):
@@ -21,13 +11,22 @@ def calculate_penalty(items, forfeits_pairs, forfeits_costs):
     return mD
 
 
-def greedyalgorithm(items, weights, profits, budget, alpha, mD):
+def execute_constructive(
+    items, weights, profits, budget, forfeits_pairs, forfeits_costs, alpha
+):
 
     # print(sorted_items)
     solution = []
     scost = []  # solution cost
     sweights = []  # solution weights
     cost = 0
+
+    # calculate penalty matrix
+    mD = calculate_penalty(
+        items,
+        forfeits_pairs,
+        forfeits_costs,
+    )
 
     if alpha == 0:  # totalmente aleatório
         remaining_items = zip(items, weights, profits)
@@ -140,7 +139,6 @@ def greedyalgorithm(items, weights, profits, budget, alpha, mD):
                 hmax = sorted_items[0][3]
                 hmin = sorted_items[-1][3]
 
-                # ub = hmax + alpha * (hmin - hmax)
                 lb = hmin
                 ub = hmax + alpha * (hmin - hmax)
 
@@ -152,31 +150,3 @@ def greedyalgorithm(items, weights, profits, budget, alpha, mD):
                 candidate = lcr[rd_index][0]
 
     return solution, cost, scost, sweights
-
-
-start_time = time.time()
-
-mD = calculate_penalty(
-    problem_instance.items,
-    problem_instance.forfeits_pairs,
-    problem_instance.forfeits_costs,
-)
-
-
-solution, cost, scost, sweights = greedyalgorithm(
-    problem_instance.items,
-    problem_instance.weights,
-    problem_instance.profits,
-    problem_instance.budget,
-    alpha,
-    mD,
-)
-
-end_time = time.time()
-
-wall_time = end_time - start_time
-
-
-print(f"solution: {solution}")
-print(f"cost: {cost}")
-print(f"time: {wall_time}")
