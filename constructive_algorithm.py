@@ -149,4 +149,4 @@ def execute_constructive(
                 rd_index = rd.choice(range(0, len(lcr)))
                 candidate = lcr[rd_index][0]
 
-    return solution, cost, scost, sweights
+    return solution, cost, scost, sweights, sorted_items

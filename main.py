@@ -3,8 +3,7 @@ import time
 import numpy as np
 
 from constructive_algorithm import execute_constructive
-
-# from local_search import execute_local_search
+from local_search import execute_local_search
 from readinstance import Instance
 
 # execution: python3 main.py --> alterar na mão o grupo de instâncias (500,700,800,1000)
@@ -26,7 +25,7 @@ for instance in range(1, 11):
 
             start_time = time.time()
 
-            solution, cost, scost, sweights = execute_constructive(
+            solution, cost, scost, sweights, sorted_items = execute_constructive(
                 problem_instance.items,
                 problem_instance.weights,
                 problem_instance.profits,
@@ -35,6 +34,8 @@ for instance in range(1, 11):
                 problem_instance.forfeits_costs,
                 alpha,
             )
+
+            execute_local_search(solution, cost, scost, sweights1, sorted_items, cap)
 
             end_time = time.time()
             wall_time = end_time - start_time
@@ -48,6 +49,7 @@ for instance in range(1, 11):
             f.write(f"\n")
 
     f.close()
+
 
 # gerar tabela consolidada de execução do algoritmo construtivo + busca local -> melhor construtivo com busca local
 # gerar tabela consolidada de execução do algoritmo construtivo + busca local + grasp
