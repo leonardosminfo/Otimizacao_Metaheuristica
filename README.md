@@ -15,8 +15,8 @@ Cerulli, R., D’Ambrosio, C., Raiconi, A., Vitale, G. (2020). The Knapsack Prob
 - [x] Ajuste Algoritmo Construtivo com Penalidades
 - [x] Algoritmo com Busca Local
 - [x] Framework GRASP
-- [ ] ILS
-- [ ] VNS
+- [x] ILS
+- [x] VNS
 - [x] Execução: 10x para cada Instância.
 - [x] Reportar Tabela: Melhor Solução
 - [x] Reportar Tabela: Média da Solução
