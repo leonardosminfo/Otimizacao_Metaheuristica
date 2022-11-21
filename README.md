@@ -17,6 +17,9 @@ Cerulli, R., D’Ambrosio, C., Raiconi, A., Vitale, G. (2020). The Knapsack Prob
 - [x] Framework GRASP
 - [x] ILS
 - [x] VNS
+- [ ] Simulated Annealing
+- [ ] Genetic Algorithm
+- [ ] Tabu Search
 - [x] Execução: 10x para cada Instância.
 - [x] Reportar Tabela: Melhor Solução
 - [x] Reportar Tabela: Média da Solução
