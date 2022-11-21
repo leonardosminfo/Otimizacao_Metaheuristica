@@ -20,6 +20,7 @@ Cerulli, R., D’Ambrosio, C., Raiconi, A., Vitale, G. (2020). The Knapsack Prob
 - [ ] Simulated Annealing
 - [ ] Genetic Algorithm
 - [ ] Tabu Search
+- [ ] Método Exato
 - [x] Execução: 10x para cada Instância.
 - [x] Reportar Tabela: Melhor Solução
 - [x] Reportar Tabela: Média da Solução
