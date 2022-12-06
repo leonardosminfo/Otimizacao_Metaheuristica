@@ -4,7 +4,7 @@ import numpy as np
 class Instance:
     def __init__(self, filename):
 
-        path = f"instances/{filename}"
+        path = f"{filename}"
 
         f = open(path, "r")
 
@@ -56,5 +56,6 @@ class Instance:
             item for sublist in self.forfeits_costs for item in sublist
         ]
 
-        self.forfeits_costs = np.array(self.forfeits_costs)
-        self.forfeits_pairs = np.array(self.forfeits_pairs)
+        # transform to numpy
+        # self.forfeits_costs = np.array(self.forfeits_costs)
+        # self.forfeits_pairs = np.array(self.forfeits_pairs)
